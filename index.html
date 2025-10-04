@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Alexis Perakis </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+        }
+
+        nav {
+            background-color: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #1a1a1a;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            display: none;
+            animation: fadeIn 0.4s;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        h2:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            max-width: 700px;
+        }
+
+        .intro {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: #fff;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .paper {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .paper:last-child {
+            border-bottom: none;
+        }
+
+        .paper-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .paper-meta {
+            font-size: 0.95rem;
+            color: #888;
+            margin-bottom: 0.8rem;
+        }
+
+        .paper-abstract {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+
+        .paper-links {
+            margin-top: 0.8rem;
+        }
+
+        .paper-links a {
+            display: inline-block;
+            margin-right: 1rem;
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .paper-links a:hover {
+            text-decoration: underline;
+        }
+
+        .policy-item {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+        .policy-item:last-child {
+            border-bottom: none;
+        }
+
+        .policy-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .policy-org {
+            font-size: 0.95rem;
+            color: #888;
+            margin-bottom: 0.8rem;
+        }
+
+        .policy-desc {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-name">Alexis Perakis</div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#research" class="nav-link">Research</a></li>
+                <li><a href="#policy" class="nav-link">Policy Work</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Home Section -->
+        <section id="home-section" class="section active">
+            <h1>Alexis Perakis</h1>
+            <p class="intro">
+                I am a 6th year economics PhD student at ETH Zurich and KOF Swiss Economic Institute. My work thematically focuses on belief formation of economic agents with a particular interest in macroeconomics and monetary policy. Methodologically, I have always been interested in leveraging unstructured data methods such as NLP and more recently LLMs (you guessed it) to extract signal from atypical datasets.
+            </p>
+            <p class="intro">
+                At KOF I have the role of domain expert "monetary policy and consumer prices". This entails preparing the inflation, interest rate and exchange rate forecasts for the Swiss economy for the KOF quarterly forecasts. 
+            </p>
+            
+            <div class="contact-info">
+                <h2>Contact</h2>
+                <p><strong>Email:</strong> perakis[at]kof.ethz.ch</p>
+                <p><strong>Links:</strong>  
+                    <a href="#" style="color: #2563eb; text-decoration: none;">Google Scholar</a> • 
+                </p>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research-section" class="section">
+            <h1>Research</h1>
+            
+            <h2>Working Papers</h2>
+            
+            <div class="paper">
+                <div class="paper-title">Title of Your Working Paper</div>
+                <div class="paper-meta">With Co-Author Name • Last updated: Month 2025</div>
+                <div class="paper-abstract">
+                    Brief abstract of your paper. Describe the main question, methodology, and key findings. Keep it accessible to a broad audience while maintaining technical accuracy.
+                </div>
+                <div class="paper-links">
+                    <a href="#">PDF</a>
+                    <a href="#">SSRN</a>
+                    <a href="#">Slides</a>
+                </div>
+            </div>
+
+            <div class="paper">
+                <div class="paper-title">Another Working Paper Title</div>
+                <div class="paper-meta">Last updated: Month 2024</div>
+                <div class="paper-abstract">
+                    Another brief abstract describing your research. Focus on the contribution and why it matters.
+                </div>
+                <div class="paper-links">
+                    <a href="#">PDF</a>
+                    <a href="#">Code</a>
+                </div>
+            </div>
+
+            <h2>Publications</h2>
+            
+            <div class="paper">
+                <div class="paper-title">Published Paper Title</div>
+                <div class="paper-meta">Journal Name, Volume(Issue), Pages, Year</div>
+                <div class="paper-abstract">
+                    Abstract of your published work. Highlight the main contribution and findings.
+                </div>
+                <div class="paper-links">
+                    <a href="#">Publisher</a>
+                    <a href="#">PDF</a>
+                    <a href="#">Replication Package</a>
+                </div>
+            </div>
+
+            <h2>Work in Progress</h2>
+            
+            <div class="paper">
+                <div class="paper-title">Early-Stage Project Title</div>
+                <div class="paper-meta">With Co-Author Names</div>
+                <div class="paper-abstract">
+                    Brief description of the project and its current status.
+                </div>
+            </div>
+        </section>
+
+        <!-- Policy Work Section -->
+        <section id="policy-section" class="section">
+            <h1>Policy Work</h1>
+            
+            <div class="policy-item">
+                <div class="policy-title">Policy Brief or Report Title</div>
+                <div class="policy-org">Organization Name • Month Year</div>
+                <div class="policy-desc">
+                    Description of the policy work, its impact, and key recommendations. Explain how your research informed policy decisions or contributed to public debate.
+                </div>
+                <div class="paper-links">
+                    <a href="#">Read More</a>
+                    <a href="#">Download PDF</a>
+                </div>
+            </div>
+
+            <div class="policy-item">
+                <div class="policy-title">Testimony or Consultation</div>
+                <div class="policy-org">Government Body or Institution • Month Year</div>
+                <div class="policy-desc">
+                    Details about your testimony, consultation, or advisory role. Describe the context and your contribution.
+                </div>
+                <div class="paper-links">
+                    <a href="#">View Testimony</a>
+                </div>
+            </div>
+
+            <div class="policy-item">
+                <div class="policy-title">Op-Ed or Commentary</div>
+                <div class="policy-org">Publication Name • Month Year</div>
+                <div class="policy-desc">
+                    Summary of your public writing and its relevance to current policy debates.
+                </div>
+                <div class="paper-links">
+                    <a href="#">Read Article</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('.section');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                
+                const targetId = link.getAttribute('href').substring(1) + '-section';
+                
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
