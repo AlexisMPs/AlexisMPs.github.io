@@ -152,6 +152,32 @@
             color: #666;
             line-height: 1.6;
             margin-bottom: 0.8rem;
+            margin-top: 0.8rem;
+        }
+        
+        .abstract-toggle {
+            cursor: pointer;
+            color: #2563eb;
+            font-size: 0.95rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 0.5rem;
+            user-select: none;
+        }
+        
+        .abstract-toggle:hover {
+            text-decoration: underline;
+        }
+        
+        .abstract-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .abstract-content.expanded {
+            max-height: 500px;
+            transition: max-height 0.5s ease-in;
         }
 
         .paper-links {
@@ -235,7 +261,7 @@
     <div class="container">
         <!-- Home Section -->
         <section id="home-section" class="section active">
-            <h1>Alexis Perakis</h1>
+            <h1>Weclome to my webpage!</h1>
             <p class="intro">
                 I am a 6th year economics PhD student at ETH Zurich and KOF Swiss Economic Institute. My work thematically focuses on belief formation of economic agents with a particular interest in macroeconomics and monetary policy. Methodologically, I have always been interested in leveraging unstructured data methods such as NLP and more recently LLMs (you guessed it) to extract signal from (increasingly less) atypical datasets.
             </p>
@@ -247,7 +273,7 @@
                 <h2>Contact</h2>
                 <p><strong>Email:</strong> perakis[at]kof.ethz.ch</p>
                 <p><strong>Links:</strong>  
-                    <a href="#" style="color: #2563eb; text-decoration: none;">Google Scholar</a> • 
+                    <a href="#" style="color: #2563eb; text-decoration: none;">Google Scholar</a> 
                 </p>
             </div>
         </section>
@@ -259,10 +285,10 @@
             <h2>Working Papers</h2>
             
             <div class="paper">
-                <div class="paper-title">Seeing and Hearing is Believing: The Role of Audiovisual Communication in Shaping Inflation Expectations</div>
-                <div class="paper-meta">With Elliott Ash, Heiner Mikosch, and Samad Sarferaz • Last updated: May 2024 • R&R at European Economic Review </div>
+                <div class="paper-title"> Seeing and Hearing is Believing: The Role of Audiovisual Communication in Shaping Inflation Expectations </div>
+                <div class="paper-authors"> With Elliott Ash, Heiner Mikosch, and Samad Sarferaz </div>
+                <div class="paper-meta"> Last updated: May 2024 • R&R at European Economic Review </div>
                  
-                <!-- The clickable toggle button -->
                 <div class="abstract-toggle" onclick="toggleAbstract(this)">► Show Abstract</div>
                 <div class="abstract-content">
                     <div class="paper-abstract">
@@ -281,6 +307,8 @@
                     <a href="https://cepr.org/publications/dp18792" target="_blank">CEPR</a>
                     <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4715515" target="_blank">SSRN</a>
                 </div>
+
+                
             </div>
 
             <h2>Work in Progress</h2>
@@ -359,6 +387,17 @@
                 document.getElementById(targetId).classList.add('active');
             });
         });
+
+        function toggleAbstract(element) {
+            const content = element.nextElementSibling;
+            content.classList.toggle('expanded');
+            
+            if (content.classList.contains('expanded')) {
+                element.textContent = '▼ Hide Abstract';
+            } else {
+                element.textContent = '► Show Abstract';
+            }
+        }
     </script>
 </body>
 </html>
